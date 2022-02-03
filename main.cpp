@@ -3,7 +3,6 @@
 #include<cmath>
 
 int main() {
-
     const int width = 120;
     const int height = 30;
     float aspect = (float)width / height;
@@ -12,14 +11,10 @@ int main() {
     screen[width * height] = '\n';
     char gradient[] = ".,-~:;=!*#$@";
     int gradientSize = std::size(gradient) - 2;
-
     int rb = 10;
     int r = 4;
-
     float x, y, z;
-
     const double PI = 3.141592653589793238463;
-
     float z0 = 10;
 
     for (float q = 0; q < 1000; q+=0.01) {
@@ -28,7 +23,6 @@ int main() {
         }
         for (float f = 0; f < 2 * PI; f += 0.1) {
             for (float t = 0; t < 2 * PI; t += 0.1) {
-
                 int x, y, z;
                 float a = q;
                 float b = q;
@@ -41,15 +35,10 @@ int main() {
                 if (dist > gradientSize) { dist = gradientSize - 1; }
                 if (dist < 0) { dist = 0; }
                 screen[x + y * width] = gradient[dist];
-                
-
             }
         }
         printf(screen);
     }
     delete[] screen;
     getchar();
-
-	
-	return 0;
 }
